@@ -77,6 +77,7 @@ Antes de enviar o email, vá na tela de grupos e contatos e os crie ou gerencie.
 #Faça uma doação!
 Se você gostou do projeto, ajude este humilde desenvolvedor a atualiza-lo e trazer novas funções. Assim como trazer a vida outros projetos que estão em desenvolvimento.
 
+###Para mais detalhes:
 Acesse http://portillodesign.com.br/projeto-mail/ para mais detalhes, descrições e doação
 Curta a página da PortilloDesign no Facebook: https://www.facebook.com/PortilloDesign
 Siga no Twitter e Instagram: @portillodesign
