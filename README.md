@@ -11,6 +11,8 @@ Desenvolvido em PHP, PortilloMail é um sistema de gerenciamento e envio de Emai
 
 Ele funciona definindo uma quantidade de emails por hora que você deseja enviar, usando o endereço de email de sua preferência para envio e resposta. O usuário é capaz de criar e gerenciar grupos, contatos, outros usuários eenviar emails. O sistema permite testes de email, reinicio do envio em casos de erros, edição de emails em rascunhos e acompanhamento de cliques, saber quantos e quem clicou no email.
 
+**ATENÇÃO: EDITE O ARQUIVO enviar.php E enviar_teste.php para adicionar DKIM
+
 **Este projeto foi feito por apenas uma pessoa, por tanto há diversos códigos denecessários, assim como ele pode e será otimizado e limpo com o passar do tempo. Esta é apenas uma ferramenta. Não nos responsabilizamos por seu uso, problemas, e materiais ilícitos que podem ser feito por terceiros. Muita atenção a licença usada neste projeto. Fique à vontade para moficiar o leiaute, mas por favor, mantenha a assinatura *Powered By*, mantendo o link.**
 
 ###Lista de Funcionalidades

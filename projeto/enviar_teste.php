@@ -84,11 +84,21 @@
 		}
 		// 1 = errors and messages
 		// 2 = messages only
+		$mail->SMTPAutoTLS = false;
 		$mail->SMTPAuth = $autenticacao; // enable SMTP authentication
 		$mail->SMTPSecure = $seguranca;
 		$mail->Port = $porta; // set the SMTP port for the service server
 		$mail->Username = $envio; // account username
 		$mail->Password = $senha_email; // account password
+		
+		/***
+		Inclua o DKIM se necessário
+		$mail->DKIM_domain = 'dominio.com.br';
+		$mail->DKIM_private = 'chaves/private.dominio.com.br';
+		$mail->DKIM_selector = 'phpmailer';
+		$mail->DKIM_passphrase = 'senha';
+		$mail->DKIM_identity = 'identidade@dominio.com.br';
+		****/
 		
 		$mail->SetFrom($envio, $nome_envio);
 		$mail->Subject = $assunto;
