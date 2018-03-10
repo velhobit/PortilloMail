@@ -8,32 +8,20 @@
 	******************************/
 	session_start();
 	include("libs/seguranca.php");
+
+if(isset($_REQUEST["nome"]) && isset($_REQUEST["senha"])){
 	//include "functions.php";
 	$nome = $_REQUEST["nome"];
 	$senha = $_REQUEST["senha"];
 	//Verificar Usuário
-	//$senha = md5($senha);
 	$validado = validaUsuario($nome, $senha);
-	//echo $validado;
-	
 	if(!$validado):
-		$msg = 'Nome de Usuário o Senha Inválido';
+		$msg = '<div class="alert">Nome de Usuário o Senha Inválido</div>';
 	else:
-		header("location:email.php");
+		header("location:emails.php");
 	endif;
-	/*include "libs/conexao.php";        //Conexão com o banco de dados.
-	$sqlLogin = "SELECT * FROM usuarios WHERE email='$nome' AND senha='$senha' LIMIT 1;";
-	$rs = mysqli_query($con,$sqlLogin); 
-	print_r($rs->num_rows);
-	if($rs->num_rows < 1):
-		$msg = 'Nome de Usuário o Senha Inválido';
-	else:
-		$_SESSION["usuario"] = $nome;
-		echo $_SESSION["usuario"];
-		header("location:email.php");
-	endif;*/
-	
- ?>
+}
+?>
 <!DOCTYPE>
 <html lang="pt_br">
 	<header>
@@ -43,6 +31,9 @@
 	</header>
 	<body>
 		<div class="login">
+			<center>
+				<img src="<?php echo $caminhoURL; ?>assets/logo_maior.png"/>
+			</center>
 			<h1>Entre Para Enviar Emails</h1>
 			<form action="#" method="post">
 				<input type="text" name="nome" placeholder="Nome de Usuário / email"/>
@@ -50,6 +41,11 @@
 				<button type="submit">Entrar</button>
 			</form>
 			<?php echo $msg; ?>
+		</div>
+		
+		<div class="powered" style="position: fixed;right: 5px;bottom: 5px;text-align: right;color:lightgrey; font-size:16px;">
+		<em>Powered By</em><a href="http://portillodesign.com.br" title="PortilloDesign" itemprop="url" target="_blank"><img style="height: 32px;
+			margin-bottom:-10px;width: auto;border-radius:5px;margin-left:5px;margin-right:5px" itemprop="logo" class="logo" src="http://portillodesign.com.br/images/logo/apple-icon-114x114.png" alt="Logo da PortilloDesign" title="PortilloDesign"></a><span itemprop="name">0.9</span>
 		</div>
 	</body>
 </html>

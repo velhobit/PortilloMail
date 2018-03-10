@@ -11,7 +11,7 @@
 	$rs = mysqli_query($con,$strSQL);        //$rs = returnset. Retorno dos dados da tabela.
 ?>
 	<table>
-		<caption>Contatos</caption>
+		<caption>Contatos que Clicaram em Algum Link do Email</caption>
 		<thead>
 			<th>ID</th>
 			<th>Email</th>
@@ -26,7 +26,7 @@
 				<td rel="id"><?php echo $row['id']?></td>
 				<td rel="email"><?php echo $row['contato']?></td>
 				<td rel="link"><?php echo $row['link']?></td>
-				<td rel="horario"><?php echo $row['data_hora']?></td>
+				<td rel="horario"><?php echo date('d/m/Y H:i',strtotime($row['data_hora']))?></td>
 			</tr>
 			<?php
 				endwhile;

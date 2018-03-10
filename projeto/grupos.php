@@ -37,57 +37,57 @@
 	$strSQL = "SELECT * FROM grupos ORDER BY titulo";   //Variável que armazena strings para extrair os dados da tabela.
 	$rs = mysqli_query($con,$strSQL);        //$rs = returnset. Retorno dos dados da tabela.
 ?>
+<?php
+	if($rsSql && isset($_REQUEST["id"])){
+		echo "<div class='alert wrap'>$msg</div>";
+	}else{
+		//echo "<h2>Erro ao Atualizar o Cadastro de Grupos</h2><h3>".mysqli_error($con)."</h3>";
+	}
+?>
 <div class="wrap grupos">
 	<!--Crud-->
 	<h1>Cadastro de Grupos de Emails</h1>
-	<?php
-		if($rsSql && isset($_REQUEST["id"])){
-			echo "<h2 class='retorno_mensagem'>$msg</h2>";
-		}else{
-			//echo "<h2>Erro ao Atualizar o Cadastro de Grupos</h2><h3>".mysqli_error($con)."</h3>";
-		}
-	?>
-	<div class="crud">
-		<form method="post" action="#" id="formulario">
-			<input type="hidden" name="acao" id="acao" value="1"  />
-			<input type="text" name="id" id="id" placeholder="ID" />
-			<input type="text" name="titulo"  id="titulo" placeholder="Nome do Grupo" required="true"/>
-			<input type="text" name="descricao" id="descricao" placeholder="Descrição" required="true"/>
-			<div class="botoes">
-				<button type="submit">Gravar</button>
-				<button type="reset" onclick="limpar()">Limpar</button>
-			</div>
-		</form>
+	<div class="area_crud">
+		<div class="crud">
+			<form method="post" action="#" id="formulario">
+				<input type="hidden" name="acao" id="acao" value="1"  />
+				<input type="text" name="id" id="id" placeholder="ID" />
+				<input type="text" name="titulo"  id="titulo" placeholder="Nome do Grupo" required="true"/>
+				<input type="text" name="descricao" id="descricao" placeholder="Descrição" required="true"/>
+				<div class="botoes">
+					<button type="submit">Salvar</button>
+					<button type="reset" onclick="limpar()">Novo Grupo</button>
+				</div>
+			</form>
 
-	</div>
-	<div class="area_tabela">
-		<div class="tabela">
-	<table>
-		<caption>Grupos</caption>
-		<thead>
-			<th>ID</th>
-			<th>Grupo</th>
-			<th>Descrição</th>
-			<th>Ação</th>
-		</thead>
-		<tbody>
-			<?php
-				while($row = mysqli_fetch_array($rs)):
-			?>
-			<tr>
-				<td rel="id"><?php echo $row['id']?></td>
-				<td rel="titulo"><?php echo $row['titulo']?></td>
-				<td rel="descricao"><?php echo $row['descricao']?></td>
-				<td>
-					<a href="#" onclick="editar(event)">Editar</a>
-					<a href="#" onclick="excluir(event)">Excluir</a>
-				</td>
-			</tr>
-			<?php
-				endwhile;
-			?>
-		</tbody>
-	</table>
+		</div>
+		<div class="area_tabela_crud ">
+			<table>
+				<caption>Grupos</caption>
+				<thead>
+					<th>ID</th>
+					<th>Grupo</th>
+					<th>Descrição</th>
+					<th>Ação</th>
+				</thead>
+				<tbody>
+					<?php
+						while($row = mysqli_fetch_array($rs)):
+					?>
+					<tr>
+						<td rel="id"><?php echo $row['id']?></td>
+						<td rel="titulo"><?php echo $row['titulo']?></td>
+						<td rel="descricao"><?php echo $row['descricao']?></td>
+						<td>
+							<img onclick="editar(event)" src="<?php echo $caminhoURL; ?>assets/editar.png" title="Editar Grupo">
+							<img onclick="excluir(event)" src="<?php echo $caminhoURL; ?>assets/delete.png" title="Excluir Grupo">
+						</td>
+					</tr>
+					<?php
+						endwhile;
+					?>
+				</tbody>
+			</table>
 		</div>
     </div>
 	<h3>

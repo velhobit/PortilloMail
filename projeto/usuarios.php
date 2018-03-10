@@ -43,28 +43,28 @@
 	<h1>Cadastro de Usuários de Emails</h1>
 	<?php
 		if($rsSql && isset($_REQUEST["id"])){
-			echo "<h2 class='retorno_mensagem'>$msg</h2>";
+			echo "<div class='alert wrap'>$msg</div><br/>";
 		}else{
 			//echo "<h2>Erro ao Atualizar o Cadastro de usuarios</h2><h3>".mysqli_error($con)."</h3>";
 		}
 	?>
+	<div class="area_crud">
 	<div class="crud">
 		<form method="post" action="#" id="formulario">
 			<input type="hidden" name="acao" id="acao" value="1"  />
 			<input type="text" name="id" id="id" placeholder="ID" />
 			<input type="text" name="nome"  id="nome" placeholder="Nome do Usuário" required="true"/>
 			<input type="text" name="email" id="email" placeholder="Email de Envio" required="true"/>
-            <input type="password" name="senha" id="senha" placeholder="Senha do Usuário" />
-            <input type="password" name="senha_email" id="senha_email" placeholder="Senha do Email de Envio"/>
-            <p style="font-size:.8em;">obs. A senha do envio irá ser salva sem criptografia no banco de dados, não use email pessoal.</p>
+            <input type="password" name="senha" id="senha" placeholder="Senha para Login do Sistema" />
+            <input type="password" name="senha_email" id="senha_email" placeholder="Senha de Envio do Email (SMTP)"/>
 			<div class="botoes">
 				<button type="submit">Gravar</button>
-				<button type="reset" onclick="limpar()">Limpar</button>
+				<button type="reset" onclick="limpar()">Novo</button>
 			</div>
 		</form>
-
+		<div class='alert'>Obs. A senha de envio será salva sem criptografia no banco de dados. É aconselhável usar uma conta de email criada apenas para mailmarketing.</div>
 	</div>
-	<div class="area_tabela">
+	<div class="area_tabela_crud">
 		<div class="tabela">
 	<table>
 		<caption>Emails</caption>
@@ -84,8 +84,8 @@
 				<td rel="nome"><?php echo $row['nome']?></td>
 				<td rel="email"><?php echo $row['email']?></td>
 				<td>
-					<a href="#" onclick="editar(event)">Editar</a>
-					<a href="#" onclick="excluir(event)">Excluir</a>
+					<img onclick="editar(event)" src="<?php echo $caminhoURL; ?>assets/editar.png" title="Editar conta de Usuário"/>
+					<img onclick="excluir(<?php echo $row['id']?>,'<?php echo $row['nome']?>')" src="<?php echo $caminhoURL; ?>assets/delete.png" title="Excluir Conta de Usuário"/>
 				</td>
 			</tr>
 			<?php
@@ -103,6 +103,7 @@
 		?>
 	</h3>
 </div>
+</div>
 <script>
 	function limpar(){
 		$("#acao").val("1");
@@ -113,16 +114,16 @@
 		$("#acao").val("2"); // Ação 2 = Editar
 	}
 	
-	function excluir(event){
-		var titulo = $(event.target).parent().parent().find("td[rel='nome']").html();
+	function excluir(id,nome){
 		var r = confirm("Tem certeza que deseja excluir o usuário "+nome+"?");
 		
 		if (r == true) {
-			relacionar();
+			$("#id").val(id); // Ação 3 = Excluir
+			$("#nome").val(nome);
 		    $("#acao").val("3"); // Ação 3 = Excluir
 		    $("form#formulario").submit();
 		} else {
-		   //NADA
+		   alert("O usuário "+ nome +"  NÃO foi excluído.");
 		}
 	}
 	

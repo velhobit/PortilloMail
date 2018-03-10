@@ -9,29 +9,63 @@
 	******************************/
 	
 	//Dados globais para configuração do sistema de emails.
-	$caminhoURL = "http://meusite.com.br/mailmarketing/"; //Caminho Completo, URL DO SITE + Pasta de instalação
-	$nomeEmpresa = "MeuSite"; // Título do site -> Empresa
+	$currentURL = "";
+	$pastaURL = "";
+	$caminhoURL = "";
+	$nomeEmpresa = "";
 	
-	//Caso use SMTP, coloque como true e os dados. Caso contrário, usará a função mail nativa. O SMTP é provido pelo projeto PHPMAiler: https://github.com/PHPMailer/PHPMailer
+	//Caso use SMTP, coloque como true, caso contrário, usará a função mail nativa. O SMTP é provido pelo projeto PHPMAiler: https://github.com/PHPMailer/PHPMailer
 	$usarSMTP = true;
 	$charset = 'UTF-8';
-	$smtp = "smtp.gmail.com";
-	$porta = "465";
-	$seguranca = "ssl";
+	$smtp = "";
+	$porta = "";
+	$seguranca = "";
 	$autenticacao = true;
 	
-	$emailResposta = "resposta@meusite.comb.br"; 
-	$nomeEmailResposta = "Nome do Responsável";
+	$emailResposta = "";
+	$nomeEmailResposta = "";
 	
-	$emailsHora = 120; //Valor aproximado, pois o resultado final vai ser convertido 
-	$emailsHoraNaoComercial = 200; // Ainda não funciona
-	$horarioComercial[] = 8; // Ainda não funciona
-	$horarioComercial[] = 18; // Ainda não funciona
+	$emailsHora = 0; //Valor aproximado, pois o resultado final vai ser convertido 
+	$emailsHoraNaoComercial = 0;
+	$horarioComercial_ini = 0;
+	$horarioComercial_fin = 0;
 	
-	//Dados do Banco
 	$host	= "localhost"; // IP do Banco
-	$user 	= "usuario"; // Usuário
-	$pswd 	= "senha"; // Senha
-	$dbname	= "banco"; // Banco
+	$user 	= "porti750_mail"; // Usuário
+	$pswd 	= "Coelho2026"; // Senha
+	$dbname	= "porti750_mail"; // Banco
 	$con 	= null; // Conexão
+
+	
+	$con = mysqli_connect($host, $user, $pswd);
+	if (!$con) {
+		die('Não foi possível conectar: ' . mysqli_error());
+	}
+	mysqli_select_db($con, $dbname);
+	mysqli_set_charset($con, "utf-8"); //Corrigir UTF8
+	
+	//Preencher Configurações Globais
+	$SQLConfig = "SELECT * from config;";   //Variável que armazena strings para extrair os dados da tabela.
+	$rsConfig = mysqli_query($con,$SQLConfig);        //$rs = returnset. Retorno
+	while($rConfig = mysqli_fetch_array($rsConfig)){
+		//Dados globais para configuração do sistema de emails.
+		$currentURL = $rConfig["url"];
+		$pastaURL = "/".$rConfig["pasta"]."/";
+		$caminhoURL = $currentURL . $pastaURL;
+		$nomeEmpresa = $rConfig["nome_empresa"];
+
+		//Caso use SMTP, coloque como true, caso contrário, usará a função mail nativa. O SMTP é provido pelo projeto PHPMAiler: https://github.com/PHPMailer/PHPMailer
+		$smtp = $rConfig["smtp"];
+		$porta = $rConfig["porta"];
+		$seguranca = $rConfig["seguranca"];
+		$autenticacao = $rConfig["autenticacao"];
+
+		$emailResposta = $rConfig["email_resposta"];
+		$nomeEmailResposta = $rConfig["nome_email_resposta"];
+
+		$emailsHora = $rConfig["emails_por_hora"]; //Valor aproximado, pois o resultado final vai ser convertido 
+		$emailsHoraNaoComercial = $rConfig["emails_por_hora_nao_comercial"];
+		$horarioComercial_ini = $rConfig["horario_comercial_ini"];
+		$horarioComercial_fin = $rConfig["horario_comercial_fin"];
+	}
 ?>

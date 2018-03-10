@@ -1,6 +1,7 @@
 body{
     font-family: Roboto, Helvetica, sans-serif;
-    background-color: #677373;
+    background-color: white;
+	color: #47555C;
     margin: 0;
 }
 
@@ -11,8 +12,8 @@ header.cabecalho{
 	box-sizing: border-box;
 	padding: .5em;
 	height: 50px;
-	background-color: #303030;
-	box-shadow: 0 1px 5px rgba(0,0,0,.5);
+	background-color: #246FD5;
+	box-shadow: 0 1px 15px rgba(0,0,0,.25);
 }
 
 iframe{
@@ -20,9 +21,11 @@ iframe{
 }
 
 a{
-	color: #165497;
+	color: #1E71CB;
 	text-decoration: none;
+	transition: color .5s;
 }
+
 a:hover{
 	text-decoration: underline;
 }
@@ -36,12 +39,11 @@ header.cabecalho img{
 }
 
 header.cabecalho h1{
-	color: #c0c1b5;
+	color: white;
 	font-weight: normal;
 	text-align: center;
 	font-size: 1.2em;
 	margin: 0;
-	text-shadow: 1px 2px 1px black;
 	margin-bottom: .5em;
 }
 
@@ -65,15 +67,15 @@ input,textarea,select{
 	width: 100%;
 	box-sizing: border-box;
 	padding: .7em;
-	font-size: .8em;
+	font-size: 1em;
 	margin-right: 2em;
 	margin-bottom: 1em;
-	min-width: 30%;
-	border: 1px solid rgba(0,0,0,.4);
+	border: 1px solid #5F7AD0;
 	background-color: #f1f1ed;
 	border-radius: 4px;
-	color: #716e6e;
-	box-shadow: inset 1px 1px 2px rgba(0,0,0,.2);
+	color: #163B73;
+
+	transition: background .5s;
 }
 
 select{
@@ -82,7 +84,7 @@ select{
 
 input:focus,textarea:focus,select:focus{
 	outline: none;
-	background-color: #ffffee;
+	background-color: #D0E6FD;
 }
 
 button{
@@ -92,13 +94,30 @@ button{
 	margin-right: 2em;
 	margin-bottom: 1em;
 	min-width: 20%;
-	background-color: #4d9eaa;
+	background-color: #1F5BD4;
 	color: white;
 	border-radius: 4px;
 	border: none;
 	text-transform: uppercase;
-	border: 1px solid rgba(0,0,0,.3);
+	
+	cursor: pointer;
 	/*box-shadow: 1px 1px 3px rgba(0,0,0,.6);*/
+	
+	transition: background .5s;
+}
+
+button:hover{
+	background-color: #277CF0;
+}
+
+.alert{
+	background-color: #FFFF99;
+	border: 2px solid #EFAD40;
+	color: #5C5013;
+	text-align: center;
+	padding: .5em 1em;
+	box-sizing: border-box;
+	border-radius: 10px;
 }
 
 div.tabelaEmails {
@@ -109,20 +128,11 @@ div.tabelaEmails {
 .area_tabela{
 	position: relative;
 	float: right;
-	padding: 20px;
 	box-sizing: border-box;
-	width: calc(100% - 320px);
 }
-.area_mensagem{
-	position: absolute;
-	left: 430px;
-	top: 50px;
-	bottom: 10px;
-}
+
 .area_tabela .tabela{
-	overflow:scroll;
 	margin: 0;
-	max-height: 30em;
 }
 
 .enviarEmail .crud{
@@ -130,22 +140,23 @@ div.tabelaEmails {
 }
 
 table {
-	width: 100%;
+	width: 99%;
 	margin-top: 20px;
 	background-color: white;
+	font-size: .85em;
 }
 
+
 table caption{
-	padding: 5px;
-	color: white;
-	background-color: rgba(0, 0, 0, 0.29);
+	color: #3856E1;
+	font-size: 16px;
+	background-color: white;
+	border-bottom: 1em;
 }
 
 table, tr, td, th {
-	color: #565656;
-	font-size: .9em;
+	
 	border-collapse: collapse;
-	border: 2px solid white;
 	padding: .4em;
 	margin: auto;
 }
@@ -154,8 +165,29 @@ table td:first-child {
     text-align: center;
 }
 
-th {
-	background-color: #E1DFE8;
+td{
+	border-right: 2px solid white;
+	text-align: center;
+}
+
+table th{
+	color: #2884D9;
+	border-collapse: collapse;
+	border-bottom: 1px solid #8493AF;
+	padding: .4em;
+	font-weight: normal;
+	margin: auto;
+	color: #2884D9;
+}
+
+table img{
+	width: 24px;
+	height: auto;
+}
+
+table th td{
+	padding-bottom: .2em;
+	background-color: white;
 }
 
 tr:nth-child(even) {
@@ -175,35 +207,31 @@ input[disabled=true],input[name=id]{
 
 
 div.wrap {
-   	position: fixed;
-   	left: 10px;
-   	right: 10px;
-   	top: 60px;
-   	bottom: 40px;
-	background-color: #bbbeb5;
-	box-shadow: 0 2px 7px black;
+	width: 90%;
+	margin: 0 auto;
 }
 
 
 
 div.wrap h1{
-	background-color: #2a3132;
-	font-size: 1em;
+	font-size: 1.5em;
 	margin: 0;
 	padding: 10px;
-	color: #8ab4b1;
+	padding-bottom: 3px;
+	color: #4456DD;
 	box-sizing: border-box;
-	font-weight: 100;
-	padding-left: 25px;
+	font-weight: normal;
+	border-bottom: 2px solid #302FA3;
+	margin-bottom: 1.1em;
 }
 
 
 div.confirma, div.so_tabela{
 	margin: 0 auto;
-	overflow: scroll;	
-	x-overflow:none;
 	box-sizing: border-box;
 }
+
+
 
 
 div.confirma .crud{
@@ -218,23 +246,9 @@ div.confirma input{
 	max-width: 400px;
 }
 
-div.confirma p, div.so_tabela p{
-	font-size: .9em;
-}
-
 div.so_tabela .area_tabela{
 	float: none;
 	width: 100%;
-}
-
-div.confirma div.emails{
-	padding: 20px;
-	padding-top: 0;
-	box-sizing: border-box;
-}
-
-div.confirma div.emails{
-	overflow: scroll;
 }
 
 
@@ -282,14 +296,12 @@ button#enviarCadastro{
 	width: 280px;
 	margin: 0 auto;
 	margin-top: 10%;
-	background-color: white;
-	border-radius: 10px;
-	box-shadow: 0 0 30px rgba(0,0,0,.3);
 	padding: 40px;
 }
 
-.login input{
-	display: block;
+.login img{
+	width: 100%;
+	height: auto;
 }
 
 .erro{
@@ -299,7 +311,12 @@ button#enviarCadastro{
 }
 
 .login h1{
-	margin-bottom: 20px;
+	margin:0;
+	margin-bottom: 1em;
+	font-weight: normal;
+	color: #1870CD;
+	font-size: 1.1em;
+	text-align: center;
 }
 
 textarea.emails{
@@ -333,7 +350,7 @@ textarea.emails{
 }
 
 .menu nav ul li a{
-	color: #bbc8ca;
+	color: #8AEFFF;
 	text-decoration: none;
 	font-size: .8em;
 }
@@ -390,10 +407,6 @@ h2.retorno_mensagem{
 	color: #6d5022;
 }
 
-.emails{
-	max-width: 800px;
-}
-
 .conferir{
 	padding: 10px;
 	box-shadow: 0 2px 8px rgba(0,0,0,.3);
@@ -432,11 +445,9 @@ h2.retorno_mensagem{
 }
 
 .tela_confirmacao{
-	width: 500px;
 	position: relative;
-	margin-top: 100px;
+	margin-top: 1em;
 	height: auto;
-	max-height: 300px;
 }
 
 button.teste{
@@ -449,6 +460,10 @@ button.voltar{
 
 #colorbox{
 	background-color:white;
+	padding: 20px;
+	border-radius: 10px;
+	outline: none;
+	box-shadow: 0 0 1em rgba(0,0,0,.2);
 }
 
 #cboxOverlay{
@@ -457,8 +472,18 @@ button.voltar{
 	right:0;
 	top:0;
 	bottom:0;
-	background-color:black;
+	background-color:rgba(255,255,255,.85);
 }
+
+#cboxContent button{
+	margin-top: 2em;
+	font-size: 16px;
+	text-transform: capitalize;
+	margin-left: 0;
+	padding: 10px;
+	width: auto;
+}
+
 
 .filtro{
 	padding: 5px;
@@ -480,12 +505,36 @@ td.nao_enviado{
 	color: #e49c02;
 }
 
-h3{
-	font-size: .9em;
-	margin: 0;
-	color:#316994;
-	font-weight: normal;
-	margin: .5em 0;
+
+div.confirma .enviarEmail{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+div.confirma .enviarEmail .area_mensagem,.resumo{
+	width: calc( 100% - 450px);
+	max-width: 800px;
+    margin: 0 auto;
+}
+
+.area_crud{
+	display: flex;
+	justify-content: space-between;
+}
+
+.area_crud .crud{
+	width: 400px;
+}
+
+.area_tabela_crud{
+	width: calc( 100% - 450px);
+	margin: 0 auto;
+}
+
+.mce-btn button:hover{
+	background-color: #C4DCFD;
+	border-radius: none;
 }
 
 .mce-container-body button,.mce-container button{
@@ -494,7 +543,82 @@ h3{
 	box-shadow: none !important;
 }
 
+.mce-window-head .mce-close{
+	min-width: inherit;
+	border-radius: 0;
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+.mce-window-head .mce-close:hover{
+	background-color: transparent;
+}
+
+
+.area_tabela h3{
+	font-size: 1.1em;
+	margin: 0;
+	color:#0D68AD;
+	font-weight: normal;
+	margin-bottom: .5em;
+}
 
 .mce-menubtn span{
 	font-size: .9em !important;
+}
+
+.obs{
+	background-color: #DAF6FF;
+	border: 2px solid #317DC4;
+	box-sizing: border-box;
+	padding: .5em 1em;
+	text-align: center;
+	border-radius: 10px;
+	color: #103887;
+	font-weight: bold;
+}
+
+.instrucoes .pre{
+	width: 100%;
+	white-space: pre-wrap;
+	text-align: left;
+	box-shadow: 0 0 10px rgba(0,0,0,.5);
+	border-bottom: 2px solid lightgrey;
+	box-sizing: border-box;
+	padding: 1.5em;
+	font-family: Consolas, Andale Mono, Lucida Console, Lucida Sans Typewriter, Monaco, Courier New, monospace;
+	font-size: .9em;
+	line-height: 1.1em;
+}
+
+.retorno{
+	color: #1513CD;
+}
+
+
+.login.instalador{
+	margin-top: 2em;
+	width: 80%;
+	max-width: 600px;
+}
+
+.login.instalador img{
+	width: 25%;
+}
+
+.login.instalador p{
+	margin-top: 0;
+	font-size: .9em;
+}
+
+.login.instalador h2{
+	margin-top: 0;
+	color: #182D57;
+	text-align: center;
+}
+
+.login.instalador p.mini-info{
+	color: #1F809E;
+	margin-top: 1em;
+	margin-bottom: 5px;
 }
