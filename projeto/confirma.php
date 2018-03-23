@@ -10,15 +10,15 @@
 	$assunto = $_REQUEST['assunto'];
 	$mensagem = $_REQUEST['mensagem'];
 	$slug = criarSlug($assunto);
-	if($grupo = "todos"){
+	if($grupo == "todos"){
 		$grupo = 0;
 	}
 	
 	$nomeGrupo = "";
 
 	if($grupo > 0){
-		$strSQL = "SELECT titulo FROM grupos WHERE grupo = '" . $grupo . "'"; 
-		$rs = mysqli_query($con,$sql);
+		$strSQL = "SELECT titulo FROM grupos WHERE id = '" . $grupo . "'"; 
+		$rs = mysqli_query($con,$strSQL);
 		while($row = mysqli_fetch_array($rs)){
 			$nomeGrupo = $row["titulo"];
 		}
@@ -32,10 +32,11 @@
 		$rs = mysqli_query($con,$sql);
 	}else{
 		//Gravar Dados
-		$sql = "INSERT INTO mensagens VALUES(DEFAULT,'$grupo','$emails_adicionais','$mensagem','$assunto','$email_envio',0,DEFAULT,DEFAULT,DEFAULT,'Preparando Para Envio','')";
+		$sql = "INSERT INTO mensagens VALUES(DEFAULT,'$grupo','$emails_adicionais','" . str_replace("'","", $mensagem) . "','$assunto','$email_envio',0,DEFAULT,DEFAULT,DEFAULT,'Preparando Para Envio','')";
 		$rs = mysqli_query($con,$sql);
 		$id = mysqli_insert_id($con);
 	}
+	
 	
 	//Pegar Email por Extenso
 	$sql = "SELECT * FROM usuarios WHERE id='$email_envio'";
@@ -85,7 +86,6 @@
 	$email .= $mensagem;
 	
 	//Dados Template
-	//include("components/email_template.php");
 	$email .= "<center style='font-size:.8em;'>Caso não consiga visualizar corretamente este email, <a href='$url' target='_blank'>clique aqui para acessar</a>.</center>";
 	$email .= '</body>';
 	fwrite($myfile, $email);
@@ -127,6 +127,7 @@
 				<form action="enviar.php">
 					<input type="hidden" name="id" id="id" value="<?php echo $id; ?>"/>
 					<input type="hidden" name="acao" id="acao" value="1"/>
+					<input type="hidden" name="grupot" id="grupo" value="<?php echo $grupo; ?>"/>
 					<button>Enviar E-mail</button>
 				</form>
 				<button class="voltar">Voltar</button>

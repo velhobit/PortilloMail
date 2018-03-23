@@ -9,7 +9,10 @@
 	include "header.php";
 	ini_set('error_reporting', E_ALL);     //Reporta todos os erros.
 	date_default_timezone_set('America/Sao_Paulo');
-	
+	/*session_start();
+	if($_SESSION["usuario"] != "naja"){
+		header("location:index.php");
+	}*/
 	$id = $_REQUEST["id"];
 	$acao = $_REQUEST["acao"];
 
@@ -182,6 +185,8 @@
 				$urlAtivaDupla = 'href="'.$caminhoURL."link.php?email=".$arrEmail[$i]."&mensagem=$id&link=";
 				$emailCompleto = str_replace("href='http://",$urlAtivaSimples, $emailCompleto);
 				$emailCompleto = str_replace('href="http://',$urlAtivaDupla, $emailCompleto);
+				$emailCompleto = str_replace("href='https://",$urlAtivaSimples, $emailCompleto);
+				$emailCompleto = str_replace('href="https://',$urlAtivaDupla, $emailCompleto);
 
 				// Cabeçalhos
 				$headers = "MIME-Version: 1.0" . "\r\n";
@@ -193,11 +198,11 @@
 				$errors = "";       //Variável onde os erros são armazenados.
 
 
-				if($usarSMTP){{
+				if($usarSMTP){
 					include_once("libs/phpmail/PHPMailerAutoload.php");
-					
+
 					$mail = new PHPMailer();
-					$mail->IsSMTP(); // telling the class to use SMTP
+					//$mail->IsSMTP(); // telling the class to use SMTP
 					$mail->CharSet = $charset;
 					$mail->Host = $smtp; // SMTP server
 					$mail->SMTPDebug = 0; // enables SMTP debug information (for testing)
@@ -206,29 +211,19 @@
 					}
 					// 1 = errors and messages
 					// 2 = messages only
-					$mail->SMTPAutoTLS = false;
 					$mail->SMTPAuth = $autenticacao; // enable SMTP authentication
 					$mail->SMTPSecure = $seguranca;
 					$mail->Port = $porta; // set the SMTP port for the service server
 					$mail->Username = $envio; // account username
 					$mail->Password = $senha_email; // account password
-					
-					/***
-					Inclua o DKIM se necessário
-					$mail->DKIM_domain = 'dominio.com.br';
-					$mail->DKIM_private = 'chaves/private.dominio.com.br';
-					$mail->DKIM_selector = 'phpmailer';
-					$mail->DKIM_passphrase = 'senha';
-					$mail->DKIM_identity = 'identidade@dominio.com.br';
-					****/
-					
+
 					$mail->SetFrom($envio, $nome_envio);
 					$mail->Subject = $assunto;
 					$mail->MsgHTML($emailCompleto);
 					$mail->AddAddress($arrEmail[$i], "");
-					
+
 					//echo $envio.$senha_email;
-					
+
 					$retorno = $mail->Send();
 				}else{
 					$retorno = @mail($arrEmail[$i], $assunto, $emailCompleto, $headers);
