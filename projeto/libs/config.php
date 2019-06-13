@@ -5,7 +5,7 @@
 			Projeto Iniciado por Rodrigo Portillo em 2015
 			Projeto colocado sob Licença Mozilla
 			@author Rodrigo Portillo
-			@url http://portillodesign.com.br/projetos/portillo-mail.html
+			@url https://velhobit.com.br
 		******************************/
 
 		//Dados globais para configuração do sistema de emails.

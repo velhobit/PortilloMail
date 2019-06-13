@@ -56,6 +56,8 @@
 	$urlAtivaDupla = 'href="'.$caminhoURL."link.php?email=".$destinatario."&mensagem=$id&link=";
 	$emailCompleto = str_replace("href='http://",$urlAtivaSimples, $emailCompleto);
 	$emailCompleto = str_replace('href="http://',$urlAtivaDupla, $emailCompleto);
+	$emailCompleto = str_replace("href='https://",$urlAtivaSimples, $emailCompleto);
+	$emailCompleto = str_replace('href="https://',$urlAtivaDupla, $emailCompleto);
 
 	// Cabeçalhos
 	$headers = "MIME-Version: 1.0" . "\r\n";

@@ -36,9 +36,9 @@ if(isset($_REQUEST["excluir"])){
 			<h1>Está Tudo Completo! Obrigado por instalar o PortilloMail.</h1>
 			<p>Para sua segurança, a pasta do instalador será automaticamente excluída e você será encaminhado para a tela de login. Caso deseje fazer mudanças nas configurações, acesse a área correspondente no sistema.</p>
 			<p>Caso possua dúvidas, acesse o site da PortilloDesign, ou procure-nos na página Facebook.</p>
-			<p><b><a href="http://portillodesign.com.br/projetos/portillo-mail.html">Página do PortilloMail, no blog PortilloDesign.</a></b></p>
+			<p><b><a href="https://velhobit.com.br/projetos/portillo-mail.html">Página do PortilloMail, no blog PortilloDesign.</a></b></p>
 			
-			<p><b><a href="http://portillodesign.com.br/ajude-um-desenvolvedor.html">Considere fazer uma doação para um humilde desenvolvedor. :). Existem várias formas de ajudar.</a></b></p>
+			<p><b><a href="https://velhobit.com.br/ajude-um-desenvolvedor.html">Considere fazer uma doação para um humilde desenvolvedor. :). Existem várias formas de ajudar.</a></b></p>
 			<form action="excluir.php">
 				<center>
 					<input type="hidden" name="excluir" value="true"/>

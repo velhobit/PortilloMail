@@ -4,7 +4,7 @@
 		Projeto Iniciado por Rodrigo Portillo em 2015
 		Projeto colocado sob Licença Mozilla
 		@author Rodrigo Portillo
-		@url http://portillodesign.com.br/projeto-mail/
+		@url https://velhobit.com.br
 	******************************/
 	include "header.php";
 	include "libs/seguranca.php";        //Conexão com o banco de dados.
@@ -72,7 +72,7 @@
 		<div class="crud">
 			<form method="post" action="configuracoes.php" id="formulario">
 				<input type="hidden" name="acao" id="acao" value="1"  />
-				<input type="text" name="url"  id="url" placeholder="http://DigiteSeuSite.com.br" required="true" value="<?php echo  $cUrl ; ?>"/>
+				<input type="text" name="url"  id="url" placeholder="https://DigiteSeuSite.com.br" required="true" value="<?php echo  $cUrl ; ?>"/>
 				<input type="text" name="pasta"  id="pasta" placeholder="Pasta onde está instalado o PortilloMail" required="true" value="<?php echo  $cPasta ; ?>"/>
 				<input type="text" name="nome_empresa"  id="nome_empresa" placeholder="Nome da Empresa" required="true" value="<?php echo  $cNomeEmpresa;?>"/>
 				<input type="text" name="smtp"  id="smtp" placeholder="Endereço STMP" required="true" value="<?php echo  $cSmtp;?>"/>
