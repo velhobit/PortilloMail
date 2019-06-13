@@ -54,7 +54,7 @@ if(isset($_REQUEST["url"])){
 			<form action="passo2.php" method="post">
 				<div>
 					<p class="mini-info">Preencha com a URL correta do site. Esse caminho é importante para definir onde os links, contadores e imagens irão referenciar.</p>
-					<input type="text" name="url" placeholder="http://meusite.com.br" value="http://<?php echo $_SERVER['HTTP_HOST']; ?>" autocomplete="off" required/>
+					<input type="text" name="url" placeholder="https://meusite.com.br" value="https://<?php echo $_SERVER['HTTP_HOST']; ?>" autocomplete="off" required/>
 				</div>
 				<div>
 					<p class="mini-info">Preencha com o nome da pasta onde você enviou os arquivos do PortilloMail</p>
@@ -127,8 +127,8 @@ if(isset($_REQUEST["url"])){
 		</div>
 		
 		<div class="powered" style="position: fixed;right: 5px;bottom: 5px;text-align: right;color:lightgrey; font-size:16px;">
-		<em>Powered By</em><a href="http://portillodesign.com.br" title="PortilloDesign" itemprop="url" target="_blank"><img style="height: 32px;
-			margin-bottom:-10px;width: auto;border-radius:5px;margin-left:5px;margin-right:5px" itemprop="logo" class="logo" src="http://portillodesign.com.br/images/logo/apple-icon-114x114.png" alt="Logo da PortilloDesign" title="PortilloDesign"></a><span itemprop="name">0.9</span>
+		<em>Powered By</em><a href="https://portillodesign.com.br" title="PortilloDesign" itemprop="url" target="_blank"><img style="height: 32px;
+			margin-bottom:-10px;width: auto;border-radius:5px;margin-left:5px;margin-right:5px" itemprop="logo" class="logo" src="https://portillodesign.com.br/images/logo/apple-icon-114x114.png" alt="Logo da PortilloDesign" title="PortilloDesign"></a><span itemprop="name">0.9</span>
 		</div>
 	</body>
 </html>

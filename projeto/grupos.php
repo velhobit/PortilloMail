@@ -4,7 +4,7 @@
 		Projeto Iniciado por Rodrigo Portillo em 2015
 		Projeto colocado sob Licença Mozilla
 		@author Rodrigo Portillo
-		@url http://portillodesign.com.br/projeto-mail/
+		@url http://velhobit.com.br
 	******************************/
 	include "header.php";
 	include "libs/seguranca.php";        //Conexão com o banco de dados.

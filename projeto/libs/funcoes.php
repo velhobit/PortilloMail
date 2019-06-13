@@ -5,7 +5,7 @@
 		Projeto Iniciado por Rodrigo Portillo em 2015
 		Projeto colocado sob Licença Mozilla
 		@author Rodrigo Portillo
-		@url http://portillodesign.com.br/projeto-mail/
+		@url https://velhobit.com.br
 	******************************/
 	
 	

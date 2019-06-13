@@ -10,7 +10,7 @@
 
 		@author Rodrigo Portillo
 
-		@url http://portillodesign.com.br/projeto-mail/
+		@url https://portillodesign.com.br/projeto-mail/
 
 	******************************/
 
@@ -38,11 +38,11 @@
 
 		<link rel="stylesheet" href="<?php echo $caminhoURL; ?>css/estilo.css">
 
-        <link rel="stylesheet" href="http://tinymce.cachefly.net/4.2/skins/lightgray/skin.min.css">
+        <link rel="stylesheet" href="https://tinymce.cachefly.net/4.2/skins/lightgray/skin.min.css">
 
 		<script src="<?php echo $caminhoURL; ?>js/advanced.js"></script>
 
-		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>	
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>	
 
 		<script src="<?php echo $caminhoURL; ?>js/tinymce/tinymce.min.js"></script>
 
@@ -54,9 +54,9 @@
 
         <meta name="description" content="Gerenciador de Mailmarketing">
 
-        <link rel="publisher" href="https://plus.google.com/112684470634109423906"/>
+        <link rel="publisher" href="httpss://plus.google.com/112684470634109423906"/>
 
-        <link rel="author" href="https://www.facebook.com/profile.php?id=100008652127063"/>
+        <link rel="author" href="httpss://www.facebook.com/profile.php?id=100008652127063"/>
 
         <meta name="robots" content="no-index" />
 
@@ -70,7 +70,7 @@
 
 			<center>
 
-				<a href="http://portillodesign.com.br/projestos/portillo-mail.html" title="Link para o Projeto Portillo Mail" target="_blank"><img src="<?php echo $caminhoURL; ?>assets/simbolo.png"/></a>
+				<a href="https://portillodesign.com.br/projestos/portillo-mail.html" title="Link para o Projeto Portillo Mail" target="_blank"><img src="<?php echo $caminhoURL; ?>assets/simbolo.png"/></a>
 
 				<h1><?php echo $nomeEmpresa; ?></h1>
 
