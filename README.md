@@ -2,7 +2,7 @@
 Sistema de Gerenciamento e Envio de EmailMarketing - Open Source
 *versão alpha -> 0.3.2*
 
-*Provavelmente descontinuado. Devo criar uma nova versão;*
+*Provavelmente descontinuado. Devo criar uma nova versão mais moderna;*
 
 Muitas pessoas possuem a necessidade de enviar emails em lote, seja informativo ou publicitário. O problema é que há um custo alto para envio de emails ou possuem certas limitações, como contatos, quantidade de email. Além disso, a necessidade de cada mês pode variar, o que não justifica o valor fixo o custo por email, das empresas de mailmarketing.
 
