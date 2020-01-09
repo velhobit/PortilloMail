@@ -2,6 +2,8 @@
 Sistema de Gerenciamento e Envio de EmailMarketing - Open Source
 *versão alpha -> 0.3.2*
 
+*Provavelmente descontinuado. Devo criar uma nova versão*
+
 Muitas pessoas possuem a necessidade de enviar emails em lote, seja informativo ou publicitário. O problema é que há um custo alto para envio de emails ou possuem certas limitações, como contatos, quantidade de email. Além disso, a necessidade de cada mês pode variar, o que não justifica o valor fixo o custo por email, das empresas de mailmarketing.
 
 Na prática, quem possui um servidor compartilhado, tem em média o direito de mandar entre 250 e 500 emails por hora. A maioria das empresas não possuem esse fluxo, principalmente fora do horário comercial. O objetivo deste projeto é usar esses envios ociosos e disperdiçados em emailmarketing ou informativo de forma gratuita, aberta e funcional.
