@@ -80,10 +80,10 @@ Antes de enviar o email, vá na tela de grupos e contatos e os crie ou gerencie.
 Se você gostou do projeto, ajude este humilde desenvolvedor a atualiza-lo e trazer novas funções. Assim como trazer a vida outros projetos que estão em desenvolvimento.
 
 ###Para mais detalhes:
-Acesse http://portillodesign.com.br/projeto-mail/ vídeos, explicações ilustrativas e doação
+Acesse https://velhobit.com.br/projetos/portillo-mail.html vídeos, explicações ilustrativas e doação
 
-Curta a página da PortilloDesign no Facebook: https://www.facebook.com/PortilloDesign
+Curta a página da PortilloDesign no Facebook: https://facebook.com/velhobit
 
-Siga no Twitter e Instagram: @portillodesign
+Siga no Twitter e Instagram: @velhobit
 
-Para dúvidas, acesse o grupo Design de Interação, no Facebook: https://www.facebook.com/groups/interacao/
+Para dúvidas, acesse o grupo Design de Interação, no Slack: https://join.slack.com/t/velhobit/shared_invite/zt-fp2g67io-xxuDOV~8lm1TrfOfoqCwBw
