@@ -86,4 +86,4 @@ Curta a página da PortilloDesign no Facebook: https://facebook.com/velhobit
 
 Siga no Twitter e Instagram: @velhobit
 
-Para dúvidas, acesse o grupo Design de Interação, no Slack: https://join.slack.com/t/velhobit/shared_invite/zt-fp2g67io-xxuDOV~8lm1TrfOfoqCwBw
+Para dúvidas, acesse o grupo Design e Desenvolvimento no Telegram: https://t.me/designprogramacao
